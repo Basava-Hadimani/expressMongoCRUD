@@ -42,7 +42,7 @@ MongoClient.connect('mongodb://Basu:Basu%40480478143@ds135441.mlab.com:35441/bas
 
 		app.put('/quotes', (req, res) => {
 		db.collection('quotes')
-		.findOneAndUpdate({name: 'Basavaraj'}, {
+		.findOneAndUpdate({name: 'asds'}, {
 			$set: {
 			name: req.body.name,
 			quote: req.body.quote
@@ -54,6 +54,14 @@ MongoClient.connect('mongodb://Basu:Basu%40480478143@ds135441.mlab.com:35441/bas
 			if (err) return res.send(err)
 			res.send(result)
 		})
+		})
+
+		app.delete('/quotes', (req, res) => {
+			db.collection('quotes').findOneAndDelete({name: req.body.name},
+			(err, result) => {
+			if (err) return res.send(500, err)
+			res.send({message: 'Data is deleted'})
+			})
 		})
 
 		app.listen(3000, () => {
