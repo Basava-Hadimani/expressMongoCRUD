@@ -34,9 +34,10 @@ MongoClient.connect('mongodb://Basu:Basu%40480478143@ds135441.mlab.com:35441/bas
 			})
 		})
 
-		app.post('/post', (req, res) => {
-			db.collection('quotes').find().toArray(function(err, results) {
-				res.send(results);
+		app.post('/library', (req, res) => {
+			console.log('Hello');
+			db.collection('library').save(req.body, function(err, results) {
+				res.send('Hello');
 			})
 		})
 
