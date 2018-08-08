@@ -1,0 +1,13 @@
+var db;
+
+
+
+var requestHandling = {
+	
+	addBook : function(){
+
+	}
+
+
+
+}

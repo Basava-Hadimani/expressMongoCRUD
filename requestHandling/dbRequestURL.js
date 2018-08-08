@@ -1,0 +1,3 @@
+const dbRequestURL = {
+	saveBook : "/saveBookToLibrary"
+}
